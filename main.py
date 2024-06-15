@@ -1,8 +1,7 @@
 import streamlit as st
-import pandas as pd
 
 st.set_page_config(layout="wide")
-col1 , emt ,col2 = st.columns([2,2,4])
+col1 , col2 = st.columns(2)
 
 with col1:
     st.image("images/pika is surprised.jpg", width=450)
@@ -20,29 +19,4 @@ Hello. This is Hashir aka RadioAactive. I am a student developer currently learn
 """
     st.info(content)
 
-st.write("""Below you can find some of my apps have build in Python.
-          You can also contact me (Check below for more details)""")
-
-col3 ,col4 = st.columns(2)
-
-data = pd.read_csv('data1.csv', sep=',')
-
-with col3:
-    for index , rows in data[:10].iterrows():
-        st.header(rows["title"])
-        st.image(f"images\{rows['image']}") # type: ignore
-        st.write(rows['description'])
-        if rows['url'] != "Coming Soon":
-            st.write(f"[Source Code]({rows["url"]})")
-        else:
-            st.write("Coming Soon")
-
-with col4:
-    for index , rows in data[10:].iterrows():
-        st.header(rows["title"])
-        st.image(f"images\{rows['image']}") # type: ignore
-        st.write(rows['description'])
-        if rows['url'] != "Coming Soon":
-            st.write(f"[Source Code]({rows["url"]})")
-        else:
-            st.write("Coming Soon")
+st.write("Below you can find some of my apps have build in Python. You can also contact me (Check below for more details)")
