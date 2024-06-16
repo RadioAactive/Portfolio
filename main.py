@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(layout="wide")
-col1 , emt ,col2 = st.columns([2,2,4])
+col1 , emt ,col2 = st.columns([2,2.5,4])
 
 with col1:
     st.image("images/pika is surprised.jpg", width=450)
@@ -30,7 +30,7 @@ data = pd.read_csv('data1.csv', sep=',')
 with col3:
     for index , rows in data[:10].iterrows():
         st.header(rows["title"])
-        st.image(f"images\{rows['image']}") # type: ignore
+        st.image(f"images\\{rows['image']}") # type: ignore
         st.write(rows['description'])
         if rows['url'] != "Coming Soon":
             st.write(f"[Source Code]({rows["url"]})")
@@ -40,7 +40,7 @@ with col3:
 with col4:
     for index , rows in data[10:].iterrows():
         st.header(rows["title"])
-        st.image(f"images\{rows['image']}") # type: ignore
+        st.image(f"images\\{rows['image']}") # type: ignore
         st.write(rows['description'])
         if rows['url'] != "Coming Soon":
             st.write(f"[Source Code]({rows["url"]})")
