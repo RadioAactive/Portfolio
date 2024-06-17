@@ -1,7 +1,8 @@
 import streamlit as st 
-from email_automation import email_auto
+import email_automation
 
 st.header("Contact Me")
+
 with st.form(key="contact"):
     email = st.text_input("Enter your email address")
     msg = st.text_area("Your message")
@@ -10,6 +11,7 @@ Subject: Email from {email}
 {msg}
 --This message was sent by {email}--
 """
-    button = st.form_submit_button
+    button = st.form_submit_button()
     if button:
-        email_auto(msg)
+        email_automation.email_auto(completed_msg)
+    st.info("Email sent successfully")

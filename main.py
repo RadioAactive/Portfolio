@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+#REMINDER: ENTER EMAIL AND PASSWORD IN email_automation.py
+
 st.set_page_config(layout="wide")
 col1 , emt ,col2 = st.columns([2,2.5,4])
 
